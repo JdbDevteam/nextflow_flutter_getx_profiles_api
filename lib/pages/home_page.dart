@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
     controller.loadDataFromAPI();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profiles'),
+        title: Text('ProfilesTest'),
       ),
       // the body contains filter text field and list of profiles
       body: Obx(() {
