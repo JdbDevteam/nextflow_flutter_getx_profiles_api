@@ -15,12 +15,22 @@ class HomePage extends StatelessWidget {
       ),
       // the body contains filter text field and list of profiles
       body: Obx(() {
-        if (controller.laoding.value == true) {
+        if (controller.loading.value == true) {
           return Center(
             child: CircularProgressIndicator(),
           );
         } else {
-          return Text("Finish");
+          var profiles = controller.profiles;
+          return ListView.builder(
+            itemCount: profiles.length,
+            itemBuilder: (BuildContext context, int index) {
+              return ListTile(
+                title: Text(profiles[index].name!),
+                subtitle: Text(profiles[index].phone!),
+                onTap: () {},
+              );
+            },
+          );
         }
       }),
     );
